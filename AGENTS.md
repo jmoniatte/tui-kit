@@ -46,7 +46,7 @@ tui-kit/                # git root + pyproject.toml
     theme_picker.py     # The picker screen
     panel.py            # PanelScreen, the base of Help
     shortcuts.py        # Help screen contents, read off the bindings
-    styles/             # base, header, modal_forms, dialogs, panel, tabs, theme_picker .tcss (in STYLE_FILES order);
+    styles/             # base, buttons, header, modal_forms, dialogs, panel, tabs, theme_picker .tcss (in STYLE_FILES order);
                         # themes/*.yaml (base16 schemes)
   scripts/sync_themes.py
 ```
@@ -87,6 +87,17 @@ of file), then asks the terminal for its colors before Textual takes the tty, an
 `make_app`, since the app loads its theme when it is built.
 
 The theme is not a setting in any panel: `t` is the only way to change it from the app.
+
+## Buttons
+
+`buttons.tcss` gives the `tinted` class to a button that sits in an app's own screens or forms:
+one line, as wide as its label, no border, its color over a 30% shade of it (50% on hover), and
+filled with it, in bold, while focused. It is blue, or green, red, yellow, purple or cyan with
+`-green`, `-red`, `-yellow`, `-purple` or `-cyan`; `-plain` is grey, for Cancel and the like,
+and blue once focused. Disabled, any of them is grey. A button that changes color swaps that
+class. An app changes its width, padding or margin with a selector at least as strong as
+`Button.tinted`, such as an id or `MyWidget .tinted`: `MyWidget Button` loses to it. Leave out
+Textual's `variant`: the color class says it.
 
 ## Dialogs
 

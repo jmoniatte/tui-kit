@@ -1,0 +1,129 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   TINTED BUTTONS - one line, as wide as the label, in a color over a shade of it
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Blue unless a color class says otherwise; focused, the color fills it. An app changes the size
+   or the margin with a selector at least as strong, such as `#my-button` or `MyWidget .tinted` */
+Button.tinted {
+    width: auto;
+    min-width: 0;
+    height: 1;
+    border: none;
+    padding: 0 2;
+    background: $blue 30%;
+    color: $blue;
+}
+
+Button.tinted:hover {
+    background: $blue 50%;
+}
+
+Button.tinted:focus {
+    background: $blue;
+    color: auto;
+    text-style: bold;
+}
+
+/* Grey, for a button that does nothing risky, such as Cancel; blue once focused */
+Button.tinted.-plain {
+    background: $bg-light;
+    color: $fg;
+}
+
+Button.tinted.-plain:hover {
+    background: $gutter;
+}
+
+Button.tinted.-plain:focus {
+    background: $blue;
+    color: auto;
+    text-style: bold;
+}
+
+Button.tinted.-green {
+    background: $green 30%;
+    color: $green;
+}
+
+Button.tinted.-green:hover {
+    background: $green 50%;
+}
+
+Button.tinted.-green:focus {
+    background: $green;
+    color: auto;
+    text-style: bold;
+}
+
+Button.tinted.-red {
+    background: $red 30%;
+    color: $red;
+}
+
+Button.tinted.-red:hover {
+    background: $red 50%;
+}
+
+Button.tinted.-red:focus {
+    background: $red;
+    color: auto;
+    text-style: bold;
+}
+
+Button.tinted.-yellow {
+    background: $yellow 30%;
+    color: $yellow;
+}
+
+Button.tinted.-yellow:hover {
+    background: $yellow 50%;
+}
+
+Button.tinted.-yellow:focus {
+    background: $yellow;
+    color: auto;
+    text-style: bold;
+}
+
+Button.tinted.-purple {
+    background: $purple 30%;
+    color: $purple;
+}
+
+Button.tinted.-purple:hover {
+    background: $purple 50%;
+}
+
+Button.tinted.-purple:focus {
+    background: $purple;
+    color: auto;
+    text-style: bold;
+}
+
+Button.tinted.-cyan {
+    background: $cyan 30%;
+    color: $cyan;
+}
+
+Button.tinted.-cyan:hover {
+    background: $cyan 50%;
+}
+
+Button.tinted.-cyan:focus {
+    background: $cyan;
+    color: auto;
+    text-style: bold;
+}
+
+/* Last, so a disabled button never takes a color's hover or focus */
+Button.tinted:disabled,
+Button.tinted.-plain:disabled,
+Button.tinted.-green:disabled,
+Button.tinted.-red:disabled,
+Button.tinted.-yellow:disabled,
+Button.tinted.-purple:disabled,
+Button.tinted.-cyan:disabled {
+    background: $comment 30%;
+    color: $comment;
+    text-style: none;
+}
